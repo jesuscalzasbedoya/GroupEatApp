@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_fragmentInicio">
+
+    <fragment
+        android:id="@+id/nav_fragmentInicio"
+        android:name="com.jcalzas.groupeat.FragmentInicio"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_inicio">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/nav_fragmentId" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_fragmentId"
+        android:name="com.jcalzas.groupeat.FragmentID"
+        android:label="@string/labelFragmentId"
+        tools:layout="@layout/fragment_id">
+
+        <action
+            android:id="@+id/action_idFragment_to_fragmentAmigos"
+            app:destination="@id/nav_fragmentAmigos" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_fragmentAmigos"
+        android:name="com.jcalzas.groupeat.FragmentAmigos"
+        android:label="@string/labelFragmentAmigos"
+        tools:layout="@layout/fragment_amigos" >
+        <action
+            android:id="@+id/action_nav_fragmentAmigos_to_nav_fragmentCiudad"
+            app:destination="@id/nav_fragmentCiudad" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_fragmentCiudad"
+        android:name="com.jcalzas.groupeat.FragmentCiudad"
+        android:label="@string/labelFragmentCiudad"
+        tools:layout="@layout/fragment_ciudad" >
+        <action
+            android:id="@+id/action_nav_fragmentCiudad_to_nav_fragmentResultados"
+            app:destination="@id/nav_fragmentResultados" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_fragmentResultados"
+        android:name="com.jcalzas.groupeat.FragmentResultados"
+        android:label="@string/labelFragmentResultados"
+        tools:layout="@layout/fragment_resultados" >
+        <action
+            android:id="@+id/action_nav_fragmentResultados_to_nav_fragmentId"
+            app:destination="@id/nav_fragmentId" />
+    </fragment>
+</navigation>

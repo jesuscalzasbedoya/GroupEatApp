@@ -1,0 +1,30 @@
+<resources>
+    <!-- Generales -->
+    <string name="app_name">Group Eat</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <!-- Inicio -->
+    <string name="hello_first_fragment">Bienvenido a Group Eat</string>
+    <string name="botonRecomendar">¡Recomiéndanos!</string>
+
+    <!-- ID -->
+    <string name="labelFragmentId">¿Quién soy?</string>
+    <string name="introducirId">Este es mi ID</string>
+
+    <!-- Amigos -->
+    <string name="labelFragmentAmigos">¿Qué amigos vamos?</string>
+    <string name="seleccionarAmigos">Nosotros somos los que vamos a comer</string>
+
+    <!-- Ciudad -->
+    <string name="labelFragmentCiudad">¿Dónde vamos?</string>
+    <string name="seleccionarCiudad">¡Queremos comer aquí!</string>
+
+    <!-- Resultados -->
+    <string name="labelFragmentResultados">¡Toca elegir donde ir!</string>
+    <string name="repetirRecomendacion">Recomiéndanos de nuevo</string>
+
+</resources>
