@@ -32,8 +32,11 @@ public class FragmentID extends Fragment {
         binding.buttonID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(FragmentID.this)
-                        .navigate(R.id.action_idFragment_to_fragmentAmigos);
+                if (!binding.textInputID.getEditText().getText().toString().isEmpty()){
+                    ((MainActivity)getActivity()).setUser_id(binding.textInputID.getEditText().getText().toString());
+                    NavHostFragment.findNavController(FragmentID.this)
+                            .navigate(R.id.action_idFragment_to_fragmentAmigos);
+                }
             }
         });
     }

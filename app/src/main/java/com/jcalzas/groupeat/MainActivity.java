@@ -12,6 +12,9 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.jcalzas.groupeat.databinding.ActivityMainBinding;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -20,9 +23,13 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
-    private static final String API_BASE_URL = "https://127.0.0.1:5002";
+    private static final String API_BASE_URL = "http://192.168.1.41:5002";
 
     private IGroupEatService service;
+
+    private String user_id;
+    private List<Rowitem_Amigos> amigosSeleccionados = new ArrayList<>();
+    private Rowitem_ciudad ciudad;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,4 +86,41 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         return retrofit.create(IGroupEatService.class);
     }
+
+    public IGroupEatService getService(){
+        return service;
+    }
+
+    public String getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
+    }
+
+    public List<Rowitem_Amigos> getAmigosSeleccionados() {
+        return amigosSeleccionados;
+    }
+
+    public void aniadirAmigo(Rowitem_Amigos amigo){
+        this.amigosSeleccionados.add(amigo);
+    }
+
+    public void setAmigosSeleccionados(List<Rowitem_Amigos> amigosSeleccionados) {
+        this.amigosSeleccionados = amigosSeleccionados;
+    }
+
+    public Rowitem_ciudad getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(Rowitem_ciudad ciudad) {
+        this.ciudad = ciudad;
+    }
+    // TODO: Implementar método
+    public String listaAmigos(){
+        return "";
+    }
 }
+

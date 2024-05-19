@@ -37,6 +37,6 @@ public class Rowitem_resultado {
 
     @Override
     public String toString() {
-        return this.restaurante;
+        return this.restaurante + ": " + this.valoracion;
     }
 }

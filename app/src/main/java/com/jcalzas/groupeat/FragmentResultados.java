@@ -1,20 +1,28 @@
 package com.jcalzas.groupeat;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import com.jcalzas.groupeat.databinding.FragmentResultadosBinding;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class FragmentResultados extends Fragment {
 
@@ -22,11 +30,16 @@ public class FragmentResultados extends Fragment {
 
     private List<Rowitem_resultado> listaResultados = new ArrayList<>();
 
+    private ArrayAdapter<Rowitem_resultado> adapter;
+    private ListView listView;
+
     public FragmentResultados() {
-        inicializarResultados();
+        // TODO: Borrar
+        //inicializarResultados();
     }
 
     private void inicializarResultados(){
+        // TODO: Borrar cuando tenga la API conectada, se hace en los métodos de abajo
         Rowitem_resultado res1 = new Rowitem_resultado("Restaurante1", 4, "Calle Falsa 123");
         Rowitem_resultado res2 = new Rowitem_resultado("Restaurante2", 4.5, "Calle Falsa 123");
         this.listaResultados.add(res1);
@@ -44,6 +57,11 @@ public class FragmentResultados extends Fragment {
         ArrayAdapter<Rowitem_resultado> adapter = new ArrayAdapter<>(requireContext(),
                 android.R.layout.simple_list_item_1, this.listaResultados);
         binding.listViewResultados.setAdapter(adapter);
+        Callback<JsonArray>callback = crearCallback();
+        // TODO: Sustituir u1 por el user_id, los amigos y la ciudad recogido
+        ((MainActivity)getActivity()).getService().getResultados(((MainActivity)getActivity())
+                .getUser_id(),"u2", ((MainActivity)getActivity()).getCiudad()
+                .toString()).enqueue(callback);
         return binding.getRoot();
     }
 
@@ -56,5 +74,49 @@ public class FragmentResultados extends Fragment {
                         .navigate(R.id.action_nav_fragmentResultados_to_nav_fragmentId);
             }
         });
+    }
+
+    private Callback<JsonArray> crearCallback(){
+        return new Callback<JsonArray>() {
+            @Override
+            public void onResponse(Call<JsonArray> call, Response<JsonArray> response) {
+                JsonArray respuesta = response.body();
+                listaResultados = crearRowItems(respuesta);
+                if (getActivity()!=null)
+                    adapter = new ArrayAdapter<>(requireContext(),
+                            android.R.layout.simple_list_item_1, listaResultados);
+                listView = getParentFragment().getView().findViewById(R.id.listViewResultados);
+                listView.setAdapter(adapter);
+            }
+
+            @Override
+            public void onFailure(Call<JsonArray> call, Throwable t) {
+                Log.e("error", "error", t);
+                Toast.makeText(
+                        getActivity(),
+                        "ERROR: " + t.getMessage(),
+                        Toast.LENGTH_LONG
+                ).show();
+            }
+        };
+    }
+
+    // TODO: Revisar atributos
+    private List<Rowitem_resultado> crearRowItems(JsonArray respuesta) {
+        List<Rowitem_resultado> listaFilas = new ArrayList<>();
+        for(int i = 0; i < respuesta.size(); i++){
+            JsonObject datosR = respuesta.get(i).getAsJsonObject();
+            listaFilas.add(new Rowitem_resultado(
+                    datosR.get("Nombre").getAsString(),
+                    datosR.get("Stars").getAsDouble(),
+                    datosR.get("Direccion").getAsString()));
+        }
+        return listaFilas;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
 }
