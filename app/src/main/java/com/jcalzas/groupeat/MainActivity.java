@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
-    private static final String API_BASE_URL = "http://192.168.1.41:5002";
+    private static final String API_BASE_URL = "http://169.254.103.134:5002";
 
     private IGroupEatService service;
 
@@ -76,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-    // TODO: PUEDE ESTAR MAL GSONCONVERTERFACTORY
     private IGroupEatService crearService(){
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         Retrofit retrofit = new Retrofit.Builder()
