@@ -91,23 +91,25 @@ public class FragmentAmigos extends Fragment {
         JsonArray amigos = respuesta.getAsJsonArray();
         for(int i = 0; i < amigos.size(); i++){
             JsonObject datosA = amigos.get(i).getAsJsonObject();
-            listaFilas.add(new Rowitem_Amigos(
-                    datosA.get("user_id").getAsString(),
-                    datosA.get("name").getAsString()));
+            listaFilas.add(new Rowitem_Amigos(datosA.get("name").getAsString(),
+                    datosA.get("user_id").getAsString())
+                    );
         }
         return listaFilas;
     }
 
-    private void guardarAmigos(){
+    private void guardarAmigos() {
         SparseBooleanArray checked = binding.listViewAmigos.getCheckedItemPositions();
         for (int i = 0; i < checked.size(); i++) {
-            if (checked.valueAt(i)) {
-                ((MainActivity)getActivity()).aniadirAmigo(this.listaAmigos.get(i));
+            int position = checked.keyAt(i);  // Obtener la posición real en la lista
+            if (checked.valueAt(i)) {  // Verificar si está seleccionado
+                ((MainActivity)getActivity()).aniadirAmigo(this.listaAmigos.get(position));  // Usar la posición para obtener el elemento
             }
         }
     }
 
-        @Override
+
+    @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;

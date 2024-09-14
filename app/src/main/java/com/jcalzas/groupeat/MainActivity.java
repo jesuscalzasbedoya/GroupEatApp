@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
-    private static final String API_BASE_URL = "http://169.254.103.134:5002";
+    private static final String API_BASE_URL = "http://192.168.1.195:5002";
 
     private IGroupEatService service;
 
@@ -117,9 +117,13 @@ public class MainActivity extends AppCompatActivity {
     public void setCiudad(Rowitem_ciudad ciudad) {
         this.ciudad = ciudad;
     }
-    // TODO: Implementar método
+
     public String listaAmigos(){
-        return "";
+        String lista ="";
+        for (int i = 0; i<this.amigosSeleccionados.size(); i++){
+            lista += (amigosSeleccionados.get(i).getId() + "-");
+        }
+        return lista;
     }
 }
 

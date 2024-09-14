@@ -2,18 +2,52 @@
     <!-- Generales -->
     <string name="app_name">Group Eat</string>
     <string name="action_settings">Settings</string>
+    <string name="volver">Volver</string>
+    <string name="guardar">Guardar</string>
 
     <!-- Strings used for fragments for navigation -->
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
     <!-- Inicio -->
-    <string name="hello_first_fragment">Bienvenido a Group Eat</string>
-    <string name="botonRecomendar">¡Recomiéndanos!</string>
+    <string name="labelBienvenida">Bienvenido a Group Eat</string>
+    <string name="botonRecomendar">Ya tengo un usuario</string>
+    <string name="botonCrearUsuario">Crear usuario</string>
 
     <!-- ID -->
     <string name="labelFragmentId">¿Quién soy?</string>
     <string name="introducirId">Este es mi ID</string>
+    <string name="introduceTuId">Mi ID es...</string>
+
+    <!-- Crear usuario -->
+    <string name="labelQuienEres">¡Hola! ¿Quién eres?</string>
+    <string name="labelIntroduceTuId">Introduce tu ID</string>
+    <string name="labelIntroduceTuNombre">Introduce tu nombre</string>
+    <string name="miNombreEs">Mi nombre es...</string>
+    <string name="miIdSera">Mi ID será...</string>
+
+    <!-- Info usuario -->
+    <string name="nombreUsuario">Nombre: </string>
+    <string name="idUsuario">ID: </string>
+    <string name="amigosUsuario">Amigos: </string>
+
+    <!-- Menu usuario -->
+    <string name="botonPerfil">Perfil</string>
+    <string name="botonResenias">Reseñas</string>
+    <string name="botonSistemaRecomendacion">Recomendar</string>
+    <string name="guardarAmigo">Guardar amigo</string>
+
+    <!-- Menu resenias -->
+    <string name="botonCrearResenia">Crear reseña</string>
+
+    <!-- Crear Resenia -->
+    <string name="labelCrearResenia">¿Qué tal fue la experiencia?</string>
+    <string name="labelIdRestaurante">¿Cual es el ID del restaurante?</string>
+    <string name="labelValoracion">¿Cuántas estrellas le das del 1 al 5?</string>
+    <string name="labelComentario">Deja un comentario</string>
+    <string name="labelDentroIdRestaurante">ID restaurante</string>
+    <string name="labelDentroValoracion">Valoración</string>
+    <string name="labelDentroComentario">Comentario</string>
 
     <!-- Amigos -->
     <string name="labelFragmentAmigos">¿Qué amigos vamos?</string>
@@ -26,5 +60,8 @@
     <!-- Resultados -->
     <string name="labelFragmentResultados">¡Toca elegir donde ir!</string>
     <string name="repetirRecomendacion">Recomiéndanos de nuevo</string>
+
+    <!-- InfoRestaurante -->
+    <string name="labelFragmentInfoRestaurante"></string>
 
 </resources>

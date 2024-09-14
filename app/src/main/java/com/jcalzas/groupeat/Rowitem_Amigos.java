@@ -22,7 +22,7 @@ public class Rowitem_Amigos {
     }
 
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
 
     @Override

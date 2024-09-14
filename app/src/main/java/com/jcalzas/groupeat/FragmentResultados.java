@@ -39,11 +39,17 @@ public class FragmentResultados extends Fragment {
     }
 
     private void inicializarResultados(){
-        // TODO: Borrar cuando tenga la API conectada, se hace en los métodos de abajo
-        Rowitem_resultado res1 = new Rowitem_resultado("Restaurante1", 4, "Calle Falsa 123");
-        Rowitem_resultado res2 = new Rowitem_resultado("Restaurante2", 4.5, "Calle Falsa 123");
+        Rowitem_resultado res1 = new Rowitem_resultado("SoBou", 3.33, "310 Chartres St");
+        Rowitem_resultado res2 = new Rowitem_resultado("Cane and Table", 3, "1113 Decatur St");
+        Rowitem_resultado res3 = new Rowitem_resultado("Meauxbar", 3, "942 N Rampart St");
+        Rowitem_resultado res4 = new Rowitem_resultado("Amelie", 2.67, "912 Royal St");
+        Rowitem_resultado res5 = new Rowitem_resultado("The Rum House", 2.5, "3128 Magazine St");
+
         this.listaResultados.add(res1);
         this.listaResultados.add(res2);
+        this.listaResultados.add(res3);
+        this.listaResultados.add(res4);
+        this.listaResultados.add(res5);
     }
 
     @Override
@@ -51,17 +57,20 @@ public class FragmentResultados extends Fragment {
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-
         binding = FragmentResultadosBinding.inflate(inflater, container, false);
         binding.listViewResultados.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-        ArrayAdapter<Rowitem_resultado> adapter = new ArrayAdapter<>(requireContext(),
-                android.R.layout.simple_list_item_1, this.listaResultados);
+
+        // this hace referencia al fragment
+        ResultadoAdapter adapter = new ResultadoAdapter(this, this.listaResultados);
         binding.listViewResultados.setAdapter(adapter);
-        Callback<JsonArray>callback = crearCallback();
-        // TODO: Sustituir u1 por el user_id, los amigos y la ciudad recogido
-        ((MainActivity)getActivity()).getService().getResultados(((MainActivity)getActivity())
-                .getUser_id(),"u2", ((MainActivity)getActivity()).getCiudad()
-                .toString()).enqueue(callback);
+
+        Callback<JsonArray> callback = crearCallback();
+        ((MainActivity) getActivity()).getService().getResultados(
+                ((MainActivity) getActivity()).getUser_id(),
+                ((MainActivity) getActivity()).listaAmigos(),
+                ((MainActivity) getActivity()).getCiudad().toString()
+        ).enqueue(callback);
+
         return binding.getRoot();
     }
 
@@ -109,7 +118,8 @@ public class FragmentResultados extends Fragment {
             listaFilas.add(new Rowitem_resultado(
                     datosR.get("Nombre").getAsString(),
                     datosR.get("Stars").getAsDouble(),
-                    datosR.get("Direccion").getAsString()));
+                    datosR.get("Direccion").getAsString()
+            ));
         }
         return listaFilas;
     }
