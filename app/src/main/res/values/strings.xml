@@ -32,12 +32,14 @@
     <string name="amigosUsuario">Amigos: </string>
 
     <!-- Menu usuario -->
+    <string name="labelQueHacer">¿Qué quieres hacer?</string>
     <string name="botonPerfil">Perfil</string>
     <string name="botonResenias">Reseñas</string>
     <string name="botonSistemaRecomendacion">Recomendar</string>
     <string name="guardarAmigo">Guardar amigo</string>
 
     <!-- Menu resenias -->
+    <string name="labelResenias">Reseñas</string>
     <string name="botonCrearResenia">Crear reseña</string>
 
     <!-- Crear Resenia -->

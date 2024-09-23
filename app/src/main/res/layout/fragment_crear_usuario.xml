@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".CrearUsuario">
+    tools:context=".FragmentCrearUsuario">
+
+    <!-- Centrar todos los elementos con respecto al padre (layout) -->
 
     <TextView
         android:id="@+id/labelTitulo"
@@ -12,34 +14,32 @@
         android:layout_height="wrap_content"
         android:text="@string/labelQuienEres"
         android:textColor="@color/verdeAston"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/idUsuario"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/labelIntroducirId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/labelIntroduceTuId"
-        app:layout_constraintBottom_toTopOf="@+id/idUsuario"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.143"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.334"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintStart_toStartOf="@+id/idUsuario"
+        app:layout_constraintBottom_toTopOf="@+id/idUsuario" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/idUsuario"
         android:layout_width="319dp"
         android:layout_height="52dp"
-        app:layout_constraintTop_toBottomOf="@+id/labelTitulo"
-        app:layout_constraintBottom_toTopOf="@+id/nombreUsuario"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintBottom_toTopOf="@+id/nombreUsuario"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -52,22 +52,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/labelIntroduceTuNombre"
-        app:layout_constraintBottom_toTopOf="@+id/nombreUsuario"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.161"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.334"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintStart_toStartOf="@+id/nombreUsuario"
+        app:layout_constraintBottom_toTopOf="@+id/nombreUsuario" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/nombreUsuario"
         android:layout_width="319dp"
         android:layout_height="52dp"
-        app:layout_constraintBottom_toTopOf="@+id/labelBlank"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idUsuario"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintTop_toBottomOf="@+id/idUsuario">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -75,45 +70,26 @@
             android:hint="@string/miNombreEs" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/labelBlank"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=" "
-        app:layout_constraintEnd_toStartOf="@+id/botonGuardar"
-        app:layout_constraintHorizontal_bias="0.608"
-        app:layout_constraintStart_toEndOf="@+id/botonVolver"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="605dp" />
-
     <Button
         android:id="@+id/botonGuardar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
         android:text="@string/guardar"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.771"
-        app:layout_constraintStart_toEndOf="@+id/botonVolver"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.878"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintStart_toEndOf="@+id/botonVolver" />
 
     <Button
         android:id="@+id/botonVolver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
         android:text="@string/volver"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/botonGuardar"
-        app:layout_constraintHorizontal_bias="0.651"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.878"
-        tools:ignore="MissingConstraints" />
-
-
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

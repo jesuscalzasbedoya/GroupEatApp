@@ -10,13 +10,13 @@
         android:id="@+id/labelTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/verdeAston"
         android:layout_marginTop="40dp"
         android:text="@string/labelCrearResenia"
+        android:textColor="@color/verdeAston"
         android:textSize="30dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/idInput"
+        app:layout_constraintStart_toStartOf="@+id/idInput"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -27,18 +27,17 @@
         android:layout_marginBottom="5dp"
 
         android:text="@string/labelIdRestaurante"
-        android:textColor="@color/design_default_color_on_secondary"
+        android:textColor="?colorOnSecondary"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/idInput"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.137"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/idInput"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/idInput"
-        android:layout_width="370dp"
+        android:layout_width="330dp"
         android:layout_height="52dp"
         app:layout_constraintBottom_toTopOf="@+id/valoracionInput"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,20 +56,18 @@
         android:id="@+id/labelValoracion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="248dp"
         android:text="@string/labelValoracion"
 
-        android:textColor="@color/design_default_color_on_secondary"
+        android:textColor="?colorOnSecondary"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/valoracionInput"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.215"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/valoracionInput" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/valoracionInput"
-        android:layout_width="370dp"
+        android:layout_width="330dp"
         android:layout_height="52dp"
         app:layout_constraintBottom_toTopOf="@+id/comentarioInput"
         app:layout_constraintEnd_toEndOf="parent"
@@ -91,17 +88,16 @@
         android:layout_height="wrap_content"
 
         android:text="@string/labelComentario"
-        android:textColor="@color/design_default_color_on_secondary"
+        android:textColor="?colorOnSecondary"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/comentarioInput"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.097"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/comentarioInput" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/comentarioInput"
-        android:layout_width="365dp"
+        android:layout_width="330dp"
         android:layout_height="248dp"
         app:layout_constraintBottom_toTopOf="@+id/boton_volver"
         app:layout_constraintEnd_toEndOf="parent"

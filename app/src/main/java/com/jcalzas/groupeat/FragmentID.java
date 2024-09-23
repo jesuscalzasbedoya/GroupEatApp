@@ -32,11 +32,23 @@ public class FragmentID extends Fragment {
         binding.buttonID.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!binding.textInputID.getEditText().getText().toString().isEmpty()){
-                    ((MainActivity)getActivity()).setUser_id(binding.textInputID.getEditText().getText().toString());
+                String id = binding.textInputID.getEditText().getText().toString();
+                System.out.println(id);
+                if (comprobarId(id)){
                     NavHostFragment.findNavController(FragmentID.this)
-                            .navigate(R.id.action_idFragment_to_fragmentAmigos);
+                            .navigate(R.id.action_nav_fragmentId_to_nav_fragmentId);
+                } else{
+                    ((MainActivity)getActivity()).setUser_id(id);
+                    NavHostFragment.findNavController(FragmentID.this)
+                            .navigate(R.id.action_nav_fragmentId_to_nav_fragmentMenuUsuario);
                 }
+            }
+        });
+        binding.botonVolver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(FragmentID.this)
+                        .navigate(R.id.action_nav_fragmentId_to_nav_fragmentInicio);
             }
         });
     }
@@ -47,4 +59,17 @@ public class FragmentID extends Fragment {
         binding = null;
     }
 
+    private boolean comprobarId(String id){
+        //TODO: completar método comprobarId
+        //Error = true --> hay algo mal
+        boolean error;
+        if (!binding.textInputID.getEditText().getText().toString().isEmpty()){
+            error=true;
+        } else if (false){
+
+        } else {
+
+        }
+        return false;
+    }
 }

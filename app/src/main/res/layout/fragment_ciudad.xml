@@ -6,14 +6,32 @@
     android:layout_height="match_parent"
     tools:context=".FragmentCiudad">
 
+    <TextView
+        android:id="@+id/labelTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="41dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/labelFragmentCiudad"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/verdeAston"
+
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
     <ListView
         android:id="@+id/listViewCiudad"
-        android:layout_width="359dp"
-        android:layout_height="441dp"
+        android:layout_width="357dp"
+        android:layout_height="495dp"
         app:layout_constraintBottom_toTopOf="@+id/button_Ciudad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelTitulo"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -22,11 +40,10 @@
         android:layout_height="wrap_content"
         android:text="@string/seleccionarCiudad"
         android:textColor="@color/white"
+        android:layout_marginBottom="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.85"
         tools:ignore="MissingConstraints"/>
 

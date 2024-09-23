@@ -6,14 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".FragmentResultados">
 
-    <ListView
-        android:id="@+id/listViewResultados"
-        android:layout_width="359dp"
-        android:layout_height="441dp"
-        app:layout_constraintBottom_toTopOf="@+id/button_RecomendarDeNuevo"
+    <TextView
+        android:id="@+id/label_Bienvenida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/labelFragmentResultados"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/verdeAston"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ListView
+        android:id="@+id/listViewResultados"
+        android:layout_width="359dp"
+        android:layout_height="525dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_RecomendarDeNuevo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_Bienvenida"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -25,8 +41,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85"
+        android:layout_marginBottom="40dp"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

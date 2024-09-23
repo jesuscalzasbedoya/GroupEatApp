@@ -15,6 +15,10 @@ public class FragmentInicio extends Fragment {
 
     private FragmentInicioBinding binding;
 
+    public FragmentInicio(){
+
+    }
+
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
@@ -33,6 +37,13 @@ public class FragmentInicio extends Fragment {
             public void onClick(View view) {
                 NavHostFragment.findNavController(FragmentInicio.this)
                         .navigate(R.id.action_FirstFragment_to_SecondFragment);
+            }
+        });
+        binding.buttonCrearUsuario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(FragmentInicio.this)
+                        .navigate(R.id.action_nav_fragmentInicio_to_nav_fragmentCrearUsuario);
             }
         });
     }
