@@ -57,21 +57,8 @@
         android:label="@string/app_name"
         tools:layout="@layout/fragment_resultados" >
         <action
-            android:id="@+id/action_nav_fragmentResultados_to_nav_fragmentId"
-            app:destination="@id/nav_fragmentId" />
-        <action
-            android:id="@+id/action_nav_fragmentResultados_to_nav_fragment_Info_Resultados"
-            app:destination="@+id/nav_fragmentInfoRestaurante"
-            />
-    </fragment>
-    <fragment
-        android:id="@+id/nav_fragmentInfoRestaurante"
-        android:name="com.jcalzas.groupeat.FragmentInfoRestaurante"
-        android:label="@string/app_name"
-        tools:layout="@layout/fragment_info_restaurante" >
-        <action
-            android:id="@+id/action_nav_fragmentInfoRestaurante_to_Resultados"
-            app:destination="@id/nav_fragmentResultados" />
+            android:id="@+id/action_nav_fragmentResultados_to_nav_fragmentMenuUsuario"
+            app:destination="@id/nav_fragmentMenuUsuario" />
     </fragment>
 
     <fragment
@@ -96,14 +83,14 @@
             android:id="@+id/action_nav_fragmentMenuUsuario_to_nav_fragmentInfoUsuario"
             app:destination="@id/nav_fragmentInfoUsuario" />
         <action
-            android:id="@+id/action_nav_fragmentMenuUsuario_to_nav_fragmentResenias"
-            app:destination="@id/nav_fragmentResenias" />
-        <action
             android:id="@+id/action_nav_fragmentMenuUsuario_to_nav_fragmentAmigos"
             app:destination="@id/nav_fragmentAmigos" />
         <action
             android:id="@+id/action_nav_fragmentMenuUsuario_to_nav_fragmentId"
             app:destination="@id/nav_fragmentId" />
+        <action
+            android:id="@+id/action_nav_fragmentMenuUsuario_to_nav_fragmentCrearResenia"
+            app:destination="@id/nav_fragmentCrearResenia" />
     </fragment>
 
     <fragment
@@ -138,8 +125,11 @@
         tools:layout="@layout/fragment_crear_resenia" >
 
         <action
-            android:id="@+id/action_nav_fragmentCrearResenia_to_nav_fragmentResenias"
-            app:destination="@id/nav_fragmentResenias" />
+            android:id="@+id/action_nav_fragmentCrearResenia_to_nav_fragmentCrearResenia"
+            app:destination="@id/nav_fragmentCrearResenia" />
+        <action
+            android:id="@+id/action_nav_fragmentCrearResenia_to_nav_fragmentMenuUsuario"
+            app:destination="@id/nav_fragmentMenuUsuario" />
     </fragment>
 
 </navigation>

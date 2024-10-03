@@ -60,13 +60,9 @@ public class FragmentResultados extends Fragment {
         binding = FragmentResultadosBinding.inflate(inflater, container, false);
         binding.listViewResultados.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 
-        // this hace referencia al fragment
-        ResultadoAdapter adapter = new ResultadoAdapter(this, this.listaResultados);
-        binding.listViewResultados.setAdapter(adapter);
-
         Callback<JsonArray> callback = crearCallback();
         ((MainActivity) getActivity()).getService().getResultados(
-                ((MainActivity) getActivity()).getUser_id(),
+                ((MainActivity) getActivity()).getUsuario().getId(),
                 ((MainActivity) getActivity()).listaAmigos(),
                 ((MainActivity) getActivity()).getCiudad().toString()
         ).enqueue(callback);
@@ -80,7 +76,7 @@ public class FragmentResultados extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(FragmentResultados.this)
-                        .navigate(R.id.action_nav_fragmentResultados_to_nav_fragmentId);
+                        .navigate(R.id.action_nav_fragmentResultados_to_nav_fragmentMenuUsuario);
             }
         });
     }

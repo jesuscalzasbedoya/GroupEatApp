@@ -12,9 +12,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="@string/nombreUsuario"
-        android:textStyle="bold"
         android:textColor="@color/verdeAston"
         android:textSize="30dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,21 +22,25 @@
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText"
+        android:id="@+id/contenidoId"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginStart="4dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/amigos"
         app:layout_constraintStart_toEndOf="@+id/idUsuario"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="80dp" />
+        app:layout_constraintTop_toBottomOf="@+id/nombreUsuario"
+        tools:ignore="MissingConstraints" />
 
     <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/contenidoNombre"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginStart="4dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintStart_toEndOf="@+id/nombreUsuario"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="40dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/idUsuario"
@@ -57,9 +61,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/amigosUsuario"
-        android:textStyle="bold"
         android:textColor="@color/verdeAston"
         android:textSize="30dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.095"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,12 +71,12 @@
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:layout_width="14dp"
-        android:layout_height="47dp"
+        android:id="@+id/contenidoAmigos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="1dp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.073"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/amigos"
         app:layout_constraintTop_toBottomOf="@+id/amigos"
         tools:ignore="MissingConstraints" />
 

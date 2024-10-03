@@ -46,7 +46,7 @@ public class FragmentAmigos extends Fragment {
     ) {
         binding = FragmentAmigosBinding.inflate(inflater, container, false);
         Callback<JsonArray>callback = crearCallback();
-        ((MainActivity)getActivity()).getService().getAmigos(((MainActivity)getActivity()).getUser_id()).enqueue(callback);
+        ((MainActivity)getActivity()).getService().getAmigos(((MainActivity)getActivity()).getUsuario().getId()).enqueue(callback);
         // Establecer eleccion multiple
         binding.listViewAmigos.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
         return binding.getRoot();
@@ -55,9 +55,9 @@ public class FragmentAmigos extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         binding.buttonAmigos.setOnClickListener(view1 -> {
+            guardarAmigos();
             NavHostFragment.findNavController(FragmentAmigos.this)
                     .navigate(R.id.action_nav_fragmentAmigos_to_nav_fragmentCiudad);
-            guardarAmigos();
         });
     }
 

@@ -27,14 +27,14 @@ public class MainActivity extends AppCompatActivity {
 
     private IGroupEatService service;
 
-    private String user_id;
     private List<Rowitem_Amigos> amigosSeleccionados = new ArrayList<>();
     private Rowitem_ciudad ciudad;
+    private Usuario usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        this.usuario = new Usuario();
         this.service = this.crearService();
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
@@ -90,14 +90,6 @@ public class MainActivity extends AppCompatActivity {
         return service;
     }
 
-    public String getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
-    }
-
     public List<Rowitem_Amigos> getAmigosSeleccionados() {
         return amigosSeleccionados;
     }
@@ -124,6 +116,10 @@ public class MainActivity extends AppCompatActivity {
             lista += (amigosSeleccionados.get(i).getId() + "-");
         }
         return lista;
+    }
+
+    public Usuario getUsuario(){
+        return this.usuario;
     }
 }
 

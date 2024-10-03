@@ -49,7 +49,8 @@ public class FragmentCiudad extends Fragment {
 
         binding.listViewCiudad.setAdapter(adapter);
         Callback<JsonArray> callback = crearCallback();
-        ((MainActivity)getActivity()).getService().getCiudades(((MainActivity)getActivity()).getUser_id(), "u2").enqueue(callback);
+        //TODO: mirar amigos ""
+        ((MainActivity)getActivity()).getService().getCiudades(((MainActivity)getActivity()).getUsuario().getId(), "u2").enqueue(callback);
         return binding.getRoot();
     }
 

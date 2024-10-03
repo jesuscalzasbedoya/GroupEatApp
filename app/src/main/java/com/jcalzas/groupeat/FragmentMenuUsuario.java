@@ -40,7 +40,7 @@ public class FragmentMenuUsuario extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(FragmentMenuUsuario.this)
-                        .navigate(R.id.action_nav_fragmentMenuUsuario_to_nav_fragmentResenias);
+                        .navigate(R.id.action_nav_fragmentMenuUsuario_to_nav_fragmentCrearResenia);
             }
         });
         binding.botonRecomendar.setOnClickListener(new View.OnClickListener() {
