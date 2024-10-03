@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/labelQuienEres"
-        android:textColor="@color/verdeAston"
+        android:textColor="?colorOnSecondary"
         android:textSize="30sp"
         android:textStyle="bold"
         android:layout_marginTop="40dp"
@@ -30,6 +30,20 @@
         android:text="@string/labelIntroduceTuId"
         app:layout_constraintStart_toStartOf="@+id/idUsuario"
         app:layout_constraintBottom_toTopOf="@+id/idUsuario" />
+
+    <TextView
+        android:id="@+id/labelError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/labelError"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/red"
+
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/idUsuario"
+        app:layout_constraintTop_toBottomOf="@+id/idUsuario"
+        tools:ignore="MissingConstraints" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/idUsuario"

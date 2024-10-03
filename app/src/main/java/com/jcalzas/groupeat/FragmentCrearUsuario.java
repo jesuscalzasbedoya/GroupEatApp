@@ -35,6 +35,7 @@ public class FragmentCrearUsuario extends Fragment {
             Bundle savedInstanceState
     ) {
         binding = FragmentCrearUsuarioBinding.inflate(inflater, container, false);
+        binding.labelError.setVisibility(View.INVISIBLE);
         return binding.getRoot();
     }
 
@@ -46,8 +47,7 @@ public class FragmentCrearUsuario extends Fragment {
             public void onClick(View view) {
                 if(!comprobarUsuarioId(binding.idUsuario.getEditText().getText().toString(),
                         binding.nombreUsuario.getEditText().getText().toString())){
-                    NavHostFragment.findNavController(FragmentCrearUsuario.this)
-                            .navigate(R.id.action_nav_fragmentCrearUsuario_to_nav_fragmentCrearUsuario);
+                    binding.labelError.setVisibility(View.VISIBLE);
                 } else{
                     volverInicio();
                 }

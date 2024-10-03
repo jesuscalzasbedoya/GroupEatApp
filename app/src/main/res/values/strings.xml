@@ -18,6 +18,7 @@
     <string name="labelFragmentId">¿Quién soy?</string>
     <string name="introducirId">Este es mi ID</string>
     <string name="introduceTuId">Mi ID es...</string>
+    <string name="labelError">El Id introducido es incorrecto</string>
 
     <!-- Crear usuario -->
     <string name="labelQuienEres">¡Hola! ¿Quién eres?</string>

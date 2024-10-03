@@ -28,6 +28,7 @@ public class FragmentCrearResenia extends Fragment {
             Bundle savedInstanceState
     ) {
         binding = FragmentCrearReseniaBinding.inflate(inflater, container, false);
+        binding.labelError.setVisibility(View.INVISIBLE);
         return binding.getRoot();
     }
 
@@ -39,8 +40,7 @@ public class FragmentCrearResenia extends Fragment {
             public void onClick(View view) {
                 if(!comprobarResenia(binding.idInput.getEditText().getText().toString(),
                         binding.valoracionInput.getEditText().getText().toString())){
-                    NavHostFragment.findNavController(FragmentCrearResenia.this)
-                            .navigate(R.id.action_nav_fragmentCrearResenia_to_nav_fragmentCrearResenia);
+                    binding.labelError.setVisibility(View.VISIBLE);
                 } else{
                     navegarResenias();
                 }

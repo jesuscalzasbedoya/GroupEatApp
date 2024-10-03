@@ -53,6 +53,19 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
+        android:id="@+id/labelError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/labelError"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/red"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/textInputID"
+        app:layout_constraintStart_toStartOf="@+id/idInput"
+        app:layout_constraintTop_toBottomOf="@+id/idInput"
+        tools:ignore="MissingConstraints" />
+    <TextView
         android:id="@+id/labelValoracion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

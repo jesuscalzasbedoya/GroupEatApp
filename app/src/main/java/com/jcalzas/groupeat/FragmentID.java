@@ -25,11 +25,12 @@ public class FragmentID extends Fragment {
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-
+        // Inflate the layout for this fragment
         binding = FragmentIdBinding.inflate(inflater, container, false);
+        binding.labelError.setVisibility(View.INVISIBLE);  // Por defecto, lo oculta
         return binding.getRoot();
-
     }
+
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -40,8 +41,7 @@ public class FragmentID extends Fragment {
                 String id = binding.textInputID.getEditText().getText().toString();
                 System.out.println(id);
                 if (comprobarId(id)){
-                    NavHostFragment.findNavController(FragmentID.this)
-                            .navigate(R.id.action_nav_fragmentId_to_nav_fragmentId);
+                    binding.labelError.setVisibility(View.VISIBLE);
                 } else{
                     ((MainActivity)getActivity()).getUsuario().setId(id);
                     NavHostFragment.findNavController(FragmentID.this)
@@ -94,6 +94,7 @@ public class FragmentID extends Fragment {
 
                 @Override
                 public void onFailure(Call<JsonArray> call, Throwable t) {
+
                 }
 
             });

@@ -11,15 +11,28 @@
         android:layout_width="298dp"
         android:layout_height="41dp"
         android:layout_marginTop="40dp"
-        android:text="@string/labelQuienEres"
+        android:text="@string/labelFragmentId"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="@color/verdeAston"
+        android:textColor="?colorOnSecondary"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/labelError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/labelError"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/red"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/textInputID"
+        app:layout_constraintStart_toStartOf="@+id/textInputID"
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -36,7 +49,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Introduce tu ID" />
+            android:hint="Introduce tu ID"
+            android:textColor="?colorOnSecondary" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

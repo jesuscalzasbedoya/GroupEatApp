@@ -31,6 +31,7 @@ public class FragmentInfoUsuario extends Fragment {
         binding.contenidoNombre.setText(((MainActivity)getActivity()).getUsuario().getNombre());
         binding.contenidoId.setText(((MainActivity)getActivity()).getUsuario().getId());
         binding.contenidoAmigos.setText(((MainActivity)getActivity()).getUsuario().amigos());
+        binding.labelError.setVisibility(View.INVISIBLE);
         return binding.getRoot();
     }
 
@@ -41,6 +42,8 @@ public class FragmentInfoUsuario extends Fragment {
             public void onClick(View view) {
                 if(!comprobarId(binding.textInputID.getEditText().getText().toString())){
                     navegarInfoUsuario();
+                } else{
+                    binding.labelError.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -84,6 +87,8 @@ public class FragmentInfoUsuario extends Fragment {
             ((MainActivity)getActivity()).getUsuario().aniadirAmigo(
                     binding.textInputID.getEditText().getText().toString());
 
+        } else{
+            resultado = true;
         }
         return resultado;
     }

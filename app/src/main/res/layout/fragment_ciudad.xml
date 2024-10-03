@@ -14,7 +14,7 @@
         android:text="@string/labelFragmentCiudad"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="@color/verdeAston"
+        android:textColor="?colorOnSecondary"
 
         android:textSize="30sp"
         android:textStyle="bold"
