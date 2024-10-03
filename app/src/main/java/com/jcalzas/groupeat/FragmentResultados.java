@@ -34,23 +34,9 @@ public class FragmentResultados extends Fragment {
     private ListView listView;
 
     public FragmentResultados() {
-        // TODO: Borrar
-        //inicializarResultados();
+
     }
 
-    private void inicializarResultados(){
-        Rowitem_resultado res1 = new Rowitem_resultado("SoBou", 3.33, "310 Chartres St");
-        Rowitem_resultado res2 = new Rowitem_resultado("Cane and Table", 3, "1113 Decatur St");
-        Rowitem_resultado res3 = new Rowitem_resultado("Meauxbar", 3, "942 N Rampart St");
-        Rowitem_resultado res4 = new Rowitem_resultado("Amelie", 2.67, "912 Royal St");
-        Rowitem_resultado res5 = new Rowitem_resultado("The Rum House", 2.5, "3128 Magazine St");
-
-        this.listaResultados.add(res1);
-        this.listaResultados.add(res2);
-        this.listaResultados.add(res3);
-        this.listaResultados.add(res4);
-        this.listaResultados.add(res5);
-    }
 
     @Override
     public View onCreateView(

@@ -57,7 +57,7 @@ public class FragmentCrearResenia extends Fragment {
 
     private void navegarResenias(){
         NavHostFragment.findNavController(FragmentCrearResenia.this)
-                .navigate(R.id.action_nav_fragmentCrearResenia_to_nav_fragmentMenuUsuario);
+                .navigate(R.id.action_nav_fragmentCrearResenia_to_nav_fragmentResenias);
     }
 
     @Override

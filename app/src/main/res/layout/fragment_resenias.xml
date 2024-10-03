@@ -24,16 +24,18 @@
         tools:ignore="MissingConstraints" />
 
     <ListView
-        android:id="@+id/resenias"
-        android:layout_width="332dp"
-        android:layout_height="423dp"
-        android:layout_marginTop="10dp"
+        android:id="@+id/listViewResenias"
+        android:layout_width="329dp"
+        android:layout_height="402dp"
+        android:layout_marginTop="20dp"
+        android:textColor="?colorOnSecondary"
+        android:textSize="20sp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/labelTitulo"
-        tools:ignore="MissingConstraints"
-        />
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/botonRecomendar"

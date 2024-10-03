@@ -89,8 +89,8 @@
             android:id="@+id/action_nav_fragmentMenuUsuario_to_nav_fragmentId"
             app:destination="@id/nav_fragmentId" />
         <action
-            android:id="@+id/action_nav_fragmentMenuUsuario_to_nav_fragmentCrearResenia"
-            app:destination="@id/nav_fragmentCrearResenia" />
+            android:id="@+id/action_nav_fragmentMenuUsuario_to_nav_fragmentResenias"
+            app:destination="@id/nav_fragmentResenias" />
     </fragment>
 
     <fragment
@@ -128,8 +128,9 @@
             android:id="@+id/action_nav_fragmentCrearResenia_to_nav_fragmentCrearResenia"
             app:destination="@id/nav_fragmentCrearResenia" />
         <action
-            android:id="@+id/action_nav_fragmentCrearResenia_to_nav_fragmentMenuUsuario"
-            app:destination="@id/nav_fragmentMenuUsuario" />
+            android:id="@+id/action_nav_fragmentCrearResenia_to_nav_fragmentResenias"
+            app:destination="@id/nav_fragmentResenias" />
+
     </fragment>
 
 </navigation>

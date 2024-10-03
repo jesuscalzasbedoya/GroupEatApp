@@ -40,8 +40,8 @@ public class Usuario {
     }
 
     public CharSequence amigos(){
-        CharSequence amigosC = "";
-        for(int i = 0; i<amigos.size(); i++){
+        CharSequence amigosC = amigos.get(0);
+        for(int i = 1; i<amigos.size(); i++){
             amigosC = amigosC + amigos.get(i) + ", ";
         }
         return amigosC;

@@ -24,4 +24,8 @@ public class Rowitem_Resenia {
     public String getRestaurante() {
         return restaurante;
     }
+
+    public String toString(){
+        return (this.restaurante + " - " + this.valoracion);
+    }
 }
